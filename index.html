@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Image Gallery</title>
+  <link rel="stylesheet" href="style.css">
+  </head>
+<body>
+
+  <h1>✨ Welcome to My Gallery ✨</h1>
+
+  <div class="filters">
+    <button class="active" onclick="filterImages('all')">All</button>
+    <button onclick="filterImages('nature')">Nature</button>
+    <button onclick="filterImages('animals')">Animals</button>
+    <button onclick="filterImages('travel')">Travel</button>
+    <button onclick="filterImages('food')">Food</button>
+    <button onclick="filterImages('people')">People</button>
+  </div>
+
+  <div class="gallery" id="gallery">
+    
+    <!-- Nature Images -->
+    <div class="image-box nature">
+      <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500&h=500&fit=crop" alt="Mountain Lake" loading="lazy">
+    </div>
+    <div class="image-box nature">
+      <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=500&h=500&fit=crop" alt="Forest Path" loading="lazy">
+    </div>
+    <div class="image-box nature">
+      <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=500&h=500&fit=crop" alt="Ocean Waves" loading="lazy">
+    </div>
+   
+    
+    <!-- Animal Images -->
+    <div class="image-box animals">
+      <img src="https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?w=500&h=500&fit=crop" alt="Lion Portrait" loading="lazy">
+    </div>
+    <div class="image-box animals">
+      <img src="https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=500&h=500&fit=crop" alt="Elephant" loading="lazy">
+    </div>
+    <div class="image-box animals">
+      <img src="https://images.unsplash.com/photo-1551717743-49959800b1f6?w=500&h=500&fit=crop" alt="Tiger" loading="lazy">
+    </div>
+    <div class="image-box animals">
+      <img src="https://images.unsplash.com/photo-1549545931-59bf067af9ab?w=500&h=500&fit=crop" alt="Giraffe" loading="lazy">
+    </div>
+    
+    <!-- Travel Images -->
+    <div class="image-box travel">
+      <img src="https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=500&h=500&fit=crop" alt="Paris Eiffel Tower" loading="lazy">
+    </div>
+    <div class="image-box travel">
+      <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=500&h=500&fit=crop" alt="London Bridge" loading="lazy">
+    </div>
+    <div class="image-box travel">
+      <img src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=500&h=500&fit=crop" alt="New York City" loading="lazy">
+    </div>
+    
+    <!-- Food Images -->
+    <div class="image-box food">
+      <img src="https://images.unsplash.com/photo-1551782450-a2132b4ba21d?w=500&h=500&fit=crop" alt="Burger" loading="lazy">
+    </div>
+    <div class="image-box food">
+      <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=500&h=500&fit=crop" alt="Pancakes" loading="lazy">
+    </div>
+    <div class="image-box food">
+      <img src="https://images.unsplash.com/photo-1546554137-f86b9593a222?w=500&h=500&fit=crop" alt="Sushi" loading="lazy">
+    </div>
+    
+    <!-- People Images -->
+    <div class="image-box people">
+      <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=500&h=500&fit=crop" alt="Portrait 1" loading="lazy">
+    </div>
+    <div class="image-box people">
+      <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=500&fit=crop" alt="Portrait 2" loading="lazy">
+    </div>
+    <div class="image-box people">
+      <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500&h=500&fit=crop" alt="Portrait 3" loading="lazy">
+    </div>
+    
+
+  <div class="lightbox" id="lightbox">
+    <img src="" alt="Full View" id="lightbox-img" />
+    <div class="lightbox-controls">
+      <button onclick="prevImage()">⏮ Previous</button>
+      <button onclick="nextImage()">Next ⏭</button>
+      <button onclick="closeLightbox()">✕ Close</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

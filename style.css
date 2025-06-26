@@ -1,0 +1,189 @@
+ 
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    
+    body {
+      margin: 0;
+      background: #121212;
+      color: #fff;
+      padding: 20px;
+    }
+    
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 2.5rem;
+      background: linear-gradient(45deg, #00c6ff, #0072ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .filters {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    
+    .filters button {
+      background: #333;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      margin: 5px;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .filters button:hover {
+      background: #555;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0, 198, 255, 0.3);
+    }
+    
+    .filters button.active {
+      background: linear-gradient(45deg, #00c6ff, #0072ff);
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 20px rgba(0, 198, 255, 0.4);
+    }
+    
+    .gallery {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      margin-bottom: 50px;
+    }
+
+    @media (min-width: 768px) {
+      .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      }
+    }
+    
+    .image-box {
+      position: relative;
+      overflow: hidden;
+      border-radius: 15px;
+      cursor: pointer;
+      aspect-ratio: 1;
+      background: #222;
+      transition: all 0.3s ease;
+    }
+    
+    .image-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0, 198, 255, 0.2);
+    }
+    
+    .image-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+      border-radius: 15px;
+    }
+    
+    .image-box:hover img {
+      transform: scale(1.1);
+    }
+    
+    .image-box::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, rgba(0, 198, 255, 0.1), rgba(0, 114, 255, 0.1));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .image-box:hover::after {
+      opacity: 1;
+    }
+    
+    .lightbox {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.95);
+      backdrop-filter: blur(10px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      z-index: 1000;
+      animation: fadeIn 0.3s ease;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    .lightbox img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 15px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+      animation: slideIn 0.3s ease;
+    }
+    
+    @keyframes slideIn {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+    
+    .lightbox-controls {
+      margin-top: 20px;
+      display: flex;
+      gap: 15px;
+    }
+    
+    .lightbox-controls button {
+      background: linear-gradient(45deg, #00c6ff, #0072ff);
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .lightbox-controls button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(0, 198, 255, 0.3);
+    }
+    
+    @media (max-width: 600px) {
+      .lightbox-controls {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      
+      .lightbox-controls button {
+        padding: 10px 16px;
+        font-size: 14px;
+      }
+      
+      .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      }
+    }
+    
+    .loading {
+      opacity: 0.5;
+      transition: opacity 0.3s ease;
+    }
+  
